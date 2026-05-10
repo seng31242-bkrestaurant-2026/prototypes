@@ -1,0 +1,8 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Design tool local caches
+.figma/
+*.bak
+*.tmp

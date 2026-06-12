@@ -1,0 +1,49 @@
+@startuml
+title Owner Monitoring & Analytics Flow
+
+skinparam Monochrome true
+skinparam Shadowing false
+skinparam BackgroundColor white
+
+skinparam ActivityBackgroundColor white
+skinparam ActivityBorderColor black
+
+skinparam DiamondBackgroundColor white
+skinparam DiamondBorderColor black
+
+skinparam ArrowColor black
+
+start
+
+:Owner Login;
+
+:Owner Dashboard;
+
+if (Select Delivery Tracking?) then (Yes)
+
+    :View Rider Locations;
+
+    :Select Rider;
+
+    :View Delivery Details;
+
+    stop
+
+else (Analytics)
+
+    :View Sales Dashboard;
+
+    :View Inventory Statistics;
+
+    :View Delivery Analytics;
+
+    :Apply Filters
+(Date / Branch);
+
+    :Generate Reports;
+
+    stop
+
+endif
+
+@enduml

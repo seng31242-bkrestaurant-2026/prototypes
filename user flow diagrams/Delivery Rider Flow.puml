@@ -1,0 +1,48 @@
+@startuml
+title Delivery Rider Flow
+
+skinparam Monochrome true
+skinparam Shadowing false
+skinparam BackgroundColor white
+
+skinparam ActivityBackgroundColor white
+skinparam ActivityBorderColor black
+
+skinparam DiamondBackgroundColor white
+skinparam DiamondBorderColor black
+
+skinparam ArrowColor black
+
+start
+
+:Rider Login;
+
+:Set Status Available;
+
+:Receive Delivery Assignment;
+
+if (Accept Assignment?) then (Yes)
+
+    :View Delivery Details;
+
+    :Navigate to Customer Location;
+
+    :Deliver Order;
+
+    :Update Status to Delivered;
+
+    :System Records Delivery;
+
+    stop
+
+else (No)
+
+    :Reject Assignment;
+
+    :System Reassigns Order;
+
+    stop
+
+endif
+
+@enduml

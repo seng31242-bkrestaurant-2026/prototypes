@@ -1,0 +1,52 @@
+@startuml
+title BK Restaurant Management System - Development Diagram
+
+skinparam BackgroundColor white
+skinparam Shadowing false
+
+skinparam PackageBackgroundColor white
+skinparam PackageBorderColor black
+
+skinparam DatabaseBackgroundColor white
+skinparam DatabaseBorderColor black
+
+skinparam ArrowColor black
+skinparam DefaultTextAlignment center
+
+package "BK Restaurant Management System" {
+
+    package "Authentication & Authorization" as Auth
+
+    package "POS System" as POS
+
+    package "Delivery Management" as Delivery
+
+    package "Inventory Management" as Inventory
+
+    package "Employee Management" as Employee
+
+    package "Reporting & Analytics" as Reporting
+
+    database "Restaurant Database" as DB
+}
+
+Employee --> Auth : authenticate
+POS --> Auth : login
+
+POS --> Inventory : update stock
+POS --> Reporting : sales data
+
+Delivery --> Reporting : delivery data
+
+Inventory --> Reporting : inventory reports
+
+Employee --> Reporting : staff reports
+
+Auth --> DB
+POS --> DB
+Delivery --> DB
+Inventory --> DB
+Employee --> DB
+Reporting --> DB
+
+@enduml

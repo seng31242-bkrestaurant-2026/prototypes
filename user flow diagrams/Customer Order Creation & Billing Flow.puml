@@ -1,0 +1,55 @@
+@startuml
+title Customer Order Creation & Billing Flow
+
+skinparam backgroundColor white
+skinparam activity {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+skinparam ArrowColor black
+skinparam DiamondBackgroundColor white
+skinparam DiamondBorderColor black
+
+start
+
+:Cashier Dashboard;
+
+:Create New Order;
+
+:Select Order Type
+(Dine-in / Takeaway / Delivery);
+
+:Add Menu Items;
+
+if (Items Available?) then (Yes)
+
+    :Calculate Total;
+
+    :Receive Payment;
+
+    :Save Order;
+
+    :Generate Invoice;
+
+    :Print or Email Bill;
+
+    :Send Order to Kitchen;
+
+    stop
+
+else (No)
+
+    :Display Item
+Unavailable Message;
+
+    :Modify Order;
+
+endif
+
+stop
+
+@enduml
+
+stop
+@enduml

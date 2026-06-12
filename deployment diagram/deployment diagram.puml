@@ -1,0 +1,44 @@
+@startuml
+title BK Restaurant Management System - Deployment Diagram
+
+skinparam monochrome true
+skinparam shadowing false
+
+skinparam defaultFontColor black
+skinparam ArrowColor black
+
+skinparam nodeBackgroundColor white
+skinparam nodeBorderColor black
+
+skinparam artifactBackgroundColor white
+skinparam artifactBorderColor black
+
+skinparam databaseBackgroundColor white
+skinparam databaseBorderColor black
+
+node "Customer Device\n(Web Browser)" as Customer
+
+node "Restaurant Staff Device\n(Web Browser)" as Staff
+
+node "Web Server" as WebServer {
+    artifact "Frontend Application"
+}
+
+node "Application Server" as AppServer {
+    artifact "Authentication & Authorization"
+    artifact "POS System"
+    artifact "Delivery Management"
+    artifact "Inventory Management"
+    artifact "Employee Management"
+    artifact "Reporting & Analytics"
+}
+
+database "Restaurant Database" as DB
+
+Customer --> WebServer : HTTPS
+Staff --> WebServer : HTTPS
+
+WebServer --> AppServer : API Requests
+AppServer --> DB : SQL Queries
+
+@enduml

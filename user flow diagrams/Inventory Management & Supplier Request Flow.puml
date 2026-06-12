@@ -1,0 +1,58 @@
+@startuml
+title Inventory Management & Supplier Request Flow
+
+skinparam Monochrome true
+skinparam Shadowing false
+skinparam BackgroundColor white
+
+skinparam ActivityBackgroundColor white
+skinparam ActivityBorderColor black
+
+skinparam DiamondBackgroundColor white
+skinparam DiamondBorderColor black
+
+skinparam ArrowColor black
+
+start
+
+:Inventory Dashboard;
+
+:View Stock Levels;
+
+if (Stock Below Threshold?) then (Yes)
+
+    :Generate Low Stock Alert;
+
+    :Manager Reviews Alert;
+
+    :Create Stock Request;
+
+    :Send Request to Supplier;
+
+    if (Supplier Approves?) then (Yes)
+
+        :Dispatch Stock;
+
+        :Receive Stock;
+
+        :Update Inventory;
+
+        stop
+
+    else (No)
+
+        :Modify Request;
+
+        stop
+
+    endif
+
+else (No)
+
+    :Continue Monitoring Inventory;
+
+    stop
+
+endif
+
+@enduml

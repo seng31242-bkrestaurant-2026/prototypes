@@ -1,2 +1,4 @@
 mobile app = https://www.figma.com/proto/eWVCGLPMAqgRGhnkKc0PF4/Untitled?node-id=0-1&t=H9ZgmtiCBGz7Gq5B-1
 POS system = https://www.figma.com/proto/eWVCGLPMAqgRGhnkKc0PF4/Untitled?node-id=2-2&t=H9ZgmtiCBGz7Gq5B-1
+
+web dashboards = https://www.figma.com/design/0ju2GCvQs1HohXIj9Rzlp9/Untitled?node-id=0-1&t=DJw57fubuwjd0MX3-1

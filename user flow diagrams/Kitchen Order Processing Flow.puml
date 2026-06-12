@@ -1,0 +1,43 @@
+@startuml
+title Kitchen Order Processing Flow
+
+skinparam Monochrome true
+skinparam Shadowing false
+skinparam BackgroundColor white
+
+skinparam ActivityBackgroundColor white
+skinparam ActivityBorderColor black
+
+skinparam DiamondBackgroundColor white
+skinparam DiamondBorderColor black
+
+skinparam ArrowColor black
+
+start
+
+:Kitchen Dashboard;
+
+:View Pending Orders;
+
+:Select Order;
+
+:Update Status to Preparing;
+
+if (Food Prepared?) then (Yes)
+
+    :Update Status to Ready;
+
+    :Notify Cashier /
+Delivery Rider;
+
+    stop
+
+else (No)
+
+    :Continue Preparing Food;
+
+endif
+
+stop
+
+@enduml
